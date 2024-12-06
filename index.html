@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片压缩工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部标题 -->
+        <header>
+            <h1>图片压缩工具</h1>
+            <p>简单高效的图片压缩服务</p>
+        </header>
+
+        <!-- 上传区域 -->
+        <div class="upload-area" id="uploadArea">
+            <input type="file" id="fileInput" accept="image/*" multiple hidden>
+            <div class="upload-box">
+                <img src="upload-icon.svg" alt="上传图标">
+                <p>点击或拖拽图片到这里</p>
+                <p class="sub-text">支持 PNG、JPG 格式</p>
+                <p class="sub-text">可同时上传最多20张图片，单张大小不超过20MB</p>
+            </div>
+        </div>
+
+        <!-- 预览和压缩控制区域 -->
+        <div class="preview-container" id="previewContainer" style="display: none;">
+            <div class="batch-preview" id="batchPreview">
+                <!-- 这里会动态添加图片预览卡片 -->
+            </div>
+            
+            <div class="compress-controls">
+                <div class="quality-control">
+                    <label for="qualitySlider">压缩质量:</label>
+                    <input type="range" id="qualitySlider" min="0" max="100" value="80">
+                    <span id="qualityValue">80%</span>
+                </div>
+                <button id="downloadBtn" class="download-btn">下载所有压缩后的图片</button>
+            </div>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
